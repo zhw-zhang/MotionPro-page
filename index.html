@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="MotionPro: A Precise Motion Controller for Image-to-Video Generation"/>
+  <meta property="og:description" content="MotionPro: A Precise Motion Controller for Image-to-Video Generation"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/MotionPro.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="MotionPro: A Precise Motion Controller for Image-to-Video Generation">
+  <meta name="twitter:description" content="MotionPro: A Precise Motion Controller for Image-to-Video Generation">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/MotionPro.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Video generation, Image-to-Video, Motion Control">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <title>MotionPro</title>
+  <!-- Network Icon.-->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+	    tex2jax: {
+	        inlineMath: [['$','$'], ['\\(','\\)']],
+	        processEscapes: true
+	    }
+	});
+    </script>
+
+  <script src="static/js/index.js"></script>
+  
+</head>
+<body>
+  <!-- <button style="position: fixed;right: 15px;top:  50%;height: 100px;width: 140px; font-size: 20px;" type="button"><a href="#Up">Back to top</a></button>  -->
+  <button style="position: fixed; right: 15px; top: 50%; padding: 10px 20px; font-size: 20px; cursor: pointer;" type="button" onclick="window.location.href='#Up'">
+    Back to top
+  </button>
+  
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="xtitle is-1 publication-title">
+              <h1 class="xtitle is-1 publication-title"  id="Up">
+                MotionPro: A Precise Motion Controller for Image-to-Video Generation </br>
+                </h1>
+              <div class="is-size-4 publication-authors">
+                CVPR 2025
+              </div>
+            </br>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://scholar.google.com.hk/citations?user=4mvNc8UAAAAJ&hl=zh-CN" target="_blank">Zhongwei Zhang</a><sup>1</sup></span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com.hk/citations?user=tWdQ7YIAAAAJ&hl=zh-CN&oi=ao" target="_blank">Fuchen Long</a><sup>2</sup></span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com.hk/citations?user=mvPyFLoAAAAJ&hl=zh-CN" target="_blank">Zhaofan Qiu</a><sup>2</sup></span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com.hk/citations?user=2RxXFPoAAAAJ&hl=zh-CN" target="_blank">Yingwei Pan</a><sup>2</sup></span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com.hk/citations?user=rQpizr0AAAAJ&hl=zh-CN&oi=ao" target="_blank">Wu Liu</a><sup>1</sup></span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com.hk/citations?user=7Yc6yssAAAAJ&hl=zh-CN" target="_blank">Ting Yao</a><sup>2</sup></span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com.hk/citations?user=7Yq4wf4AAAAJ&hl=zh-CN" target="_blank">Tao Mei</a><sup>2</sup></span>
+                </div>
+          </br>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                <sup>1</sup> University of Science and Technology of China &nbsp;&nbsp;&nbsp;
+                <sup>2</sup> HiDream.ai Inc &nbsp;&nbsp;&nbsp;
+                <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding Author</small></span> -->
+              </div>
+              
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  
+                   <!-- ArXiv abstract Link -->
+              <span class="link-block">
+                <a href="TODO" target="_blank"
+                class="external-link ">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="TODO" target="_blank"
+              class="external-link ">
+              <span class="icon">
+                <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>PDF</span>
+              </a>
+            </span>
+
+            <span class="link-block">
+              <a href="TODO" target="_blank"
+              class="external-link ">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span> GitHub</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://huggingface.co/zzwustc/MotionPro/tree/main" target="_blank" >🤗 HuggingFace</a>
+            </span>
+          
+            <div class="column has-text-centered">
+              <div class="publication-links-new">
+                  <span class="button-block">
+                      <a href="#Abstract" class="external-link button is-normal is-rounded">
+                      <span>Abstract</span>
+                      </a>
+                  </span>
+                  <span class="button-block">
+                      <a href="#Method" class="external-link button is-normal is-rounded">
+                      <span>Method</span>
+                      </a>
+                  </span>
+                  <span class="button-block">
+                    <a href="#Comparison_1" class="external-link button is-normal is-rounded">
+                    <span>Comparison</span>
+                    </a>
+                  </span>
+                  <span class="button-block">
+                    <a href="#Fine-grained results" class="external-link button is-normal is-rounded">
+                    <span>Gallery: Motion Control</span>
+                    </a>
+                  </span>
+                  <span class="button-block">
+                    <a href="#complex results" class="external-link button is-normal is-rounded">
+                    <span>Application: Object Motion and Camera Control</span>
+                    </a>
+                  </span>
+              </div>
+            </div>
+
+                  </div>
+            
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser" style="min-height: 100vh; padding-bottom: 0px;">
+  <div class="container" style="min-height: 100vh; padding-bottom: 0;">
+    <div class="hero-body" style="padding-bottom: 0;">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/abs_cases/abs_video2.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light" style="margin-top: 00px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="Abstract">Abstract</h2> <!-- 添加 ID 以供链接跳转 -->
+        <div class="content has-text-justified"\>
+          <p>
+            Animating images with interactive motion control has garnered popularity for image-to-video (I2V) generation. Modern approaches typically regard the Gaussian filtered trajectory as sole motion control signal. 
+            Nevertheless, the flow approximation via Gaussian kernel limits the controllability of fine-grained movement, and commonly fails to disentangle object and camera moving. To alleviate these, we present MotionPro, a new recipe of region-wise motion controller that novelly leverages region-wise trajectory and motion mask to regulate fine-grained motion synthesis and identify exact target motion category (i.e., object or camera moving), respectively. 
+            Technically, MotionPro first estimates the flow maps on each training video via a tracking model, and then samples the region-wise trajectories from multiple local regions to simulate inference scenario. Instead of approximating flow distributions generally using a large Gaussian kernel, our region-wise trajectory provides a more precise control by directly employing trajectories in local region and thus manages to characterize fine-grained movement. 
+            A motion mask is simultaneously derived from the predicted flow maps to present holistic motion dynamics. To pursue natural motion control, MotionPro further strengthens video denoising with additional conditions of region-wise trajectory and motion mask in a feature modulation manner. More remarkably, we meticulously construct a benchmark, i.e., MC-Bench, with 1.1K user-annotated image-trajectory pairs, for the evaluation of both fine-grained and object-level I2V motion control. Extensive experiments conducted on WebVid-10M and MC-Bench demonstrate the effectiveness of MotionPro.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Paper abstract -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-2" id="Method">Method</h2>
+        <div class="content has-text-justified">
+          <img src="static/images/MotionPro.png" />
+        </div>
+        <p class="content has-text-justified">
+          An overview of (a) our MotionPro for controllable I2V generation and (b) pipeline of motion condition generation. During training, MotionPro first extracts the proposed region-wise trajectory and motion mask on the input video as the control signals. The multi-scale features are then learnt on these signals by a motion encoder, and further injected into the 3D-UNet of SVD in a feature modulation manner. Meanwhile, LoRA layers are integrated into all attention modules in the transformer blocks to improve the optimization of motion-trajectory alignment. In the inference stage, the region-wise trajectory and motion mask are first derived from the user provided trajectory and brushed region, and then exploited as the guidance to calibrate I2V video generation.
+          </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<section class="hero teaser" style="min-height: 100vh; padding-bottom: 20px;">
+  <div class="container" style="min-height: 100vh;">
+    <div class="hero-body" >
+      <h2 class="title is-2" id="Comparison_1">Comparison 1: Fine-grained Motion Control</h2>
+      <!-- 使用 Flexbox 来对齐文本 -->
+      <div style="display: flex; justify-content: space-around; align-items: center; margin: 0px 0;">
+        <span style="font-size: 24px; font-weight: bold;">User Input</span>
+        <span style="font-size: 24px; font-weight: bold;">DragNUWA</span>
+        <span style="font-size: 24px; font-weight: bold;">DragDiffusion</span>
+        <span style="font-size: 24px; font-weight: bold;">MOFA-Video</span>
+        <span style="font-size: 24px; font-weight: bold; color: #FF5733;">MotionPro</span>
+      </div>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/comparison_fine/SY_2024-07-05-1959-11_02_comparison.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/comparison_fine/JH_2023-09-14-1826-07_02_comparison.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/comparison_fine/ZZW_2024-07-07-1004-55_03_comparison.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/comparison_fine/ZZW_2024-07-06-1641-55_01_comparison.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser" style="min-height: 100vh; padding-bottom: 20px;">
+  <div class="container" style="min-height: 100vh;">
+    <div class="hero-body" >
+      <h2 class="title is-2" >Comparison 2: Object-level Motion Control</h2>
+      <!-- 使用 Flexbox 来对齐文本 -->
+      <div style="display: flex; justify-content: space-around; align-items: center; margin: 0px 0;">
+        <span style="font-size: 24px; font-weight: bold;">User Input</span>
+        <span style="font-size: 24px; font-weight: bold;">MOFA-Video</span>
+        <span style="font-size: 24px; font-weight: bold;">DragAnything</span>
+        <span style="font-size: 24px; font-weight: bold; color: #FF5733;">MotionPro</span>
+      </div>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/comparison_object/ZZW_2024_07_09_0130_20_02_comparison.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/comparison_object/ZZW_2024_07_09_0131_20_07_comparison.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/comparison_object/ZZW_2024_07_08_1705_20_02_comparison.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/comparison_object/ZZW_2024_07_09_0409_20_02_comparison.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/comparison_object/ZZW_2024_07_09_0150_20_03_comparison.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser" style="min-height: 100vh; padding-bottom: 20px;">
+  <div class="container" style="min-height: 100vh;">
+    <div class="hero-body" >
+      <h2 class="title is-2" id="complex results">Application 1: Object Motion and Camera Control</h2>
+      <div style="display: flex; justify-content: space-around; align-items: center; margin: 0px 0;">
+        <span style="font-size: 24px; font-weight: bold;">User Input</span>
+        <span style="font-size: 24px; font-weight: bold; color: #FF5733;">MotionPro</span>
+        <span style="font-size: 24px; font-weight: bold;">User Input</span>
+        <span style="font-size: 24px; font-weight: bold; color: #FF5733;">MotionPro</span>
+      </div>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static//videos/complex_control/case_1.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/complex_control/case_2.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/complex_control/case_3.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/complex_control/case_4.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/complex_control/case_5.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/complex_control/case_6.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser" style="min-height: 100vh; padding-bottom: 20px;">
+  <div class="container" style="min-height: 100vh;">
+    <div class="hero-body" >
+      <h2 class="title is-2" >Application 2: I2V with Camera Control</h2>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static//videos/camera_ctrl/camera_1.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/camera_ctrl/camera_2.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser" style="min-height: 100vh; padding-bottom: 20px;">
+  <div class="container" style="min-height: 100vh;">
+    <div class="hero-body" >
+      <h2 class="title is-2" id="Fine-grained results">Gallery 1: Fine-grained Motion Control</h2>
+      <div style="display: flex; justify-content: space-around; align-items: center; margin: 0px 0;">
+        <span style="font-size: 24px; font-weight: bold;">User Input</span>
+        <span style="font-size: 24px; font-weight: bold; color: #FF5733;">MotionPro</span>
+        <span style="font-size: 24px; font-weight: bold;">User Input</span>
+        <span style="font-size: 24px; font-weight: bold; color: #FF5733;">MotionPro</span>
+      </div>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/fined/case_3.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/fined/case_4.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/fined/case_5.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/fined/case_6.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/fined/case_7.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/fined/case_8.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser" style="min-height: 100vh; padding-bottom: 20px;">
+  <div class="container" style="min-height: 100vh;">
+    <div class="hero-body" >
+      <h2 class="title is-2" id="object results">Gallery 2: Object-level Motion Control</h2>
+      <div style="display: flex; justify-content: space-around; align-items: center; margin: 0px 0;">
+        <span style="font-size: 24px; font-weight: bold;">User Input</span>
+        <span style="font-size: 24px; font-weight: bold; color: #FF5733;">MotionPro</span>
+        <span style="font-size: 24px; font-weight: bold;">User Input</span>
+        <span style="font-size: 24px; font-weight: bold; color: #FF5733;">MotionPro</span>
+      </div>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static//videos/object/case_1.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/object/case_4.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/object/case_5.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/object/case_9.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/object/case_13.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static/videos/object/case_14.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero teaser" style="min-height: auto; padding-bottom: 0px;">
+  <div class="container" style="padding-bottom: 20px;">
+    <div class="hero-body" style="padding-bottom: 20px;">
+      <h2 class="title is-2" id="ablation results">Ablation Study</h2>
+      <div style="display: flex; justify-content: space-around; align-items: center; margin: 0px 0;">
+        <span style="font-size: 24px; font-weight: bold;">Control</span>
+        <span style="font-size: 24px; font-weight: bold;">K=16</span>
+        <span style="font-size: 24px; font-weight: bold;">K=8</span>
+        <span style="font-size: 24px; font-weight: bold;">Control</span>
+        <span style="font-size: 24px; font-weight: bold;">K=8</span>
+        <span style="font-size: 24px; font-weight: bold;">K=4</span>
+        <span style="font-size: 24px; font-weight: bold;">K=2</span>
+        <span style="font-size: 24px; font-weight: bold;">K=1</span>
+      </div>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="static\videos\video_ablation.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section> -->
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
