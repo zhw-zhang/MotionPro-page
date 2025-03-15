@@ -217,7 +217,7 @@
       <div class="column">
         <h2 class="title is-2" id="Method">Method</h2>
         <div class="content has-text-justified">
-          <img src="static/images/MotionPro.png" />
+          <img src="static/images/MotionPro.jpg" />
         </div>
         <p class="content has-text-justified">
           An overview of (a) our MotionPro for controllable I2V generation and (b) pipeline of motion condition generation. During training, MotionPro first extracts the proposed region-wise trajectory and motion mask on the input video as the control signals. The multi-scale features are then learnt on these signals by a motion encoder, and further injected into the 3D-UNet of SVD in a feature modulation manner. Meanwhile, LoRA layers are integrated into all attention modules in the transformer blocks to improve the optimization of motion-trajectory alignment. In the inference stage, the region-wise trajectory and motion mask are first derived from the user provided trajectory and brushed region, and then exploited as the guidance to calibrate I2V video generation.
